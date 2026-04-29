@@ -5,13 +5,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    overflow-x: hidden;
 }
 
 #login-container {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background: url('assests/image/bg t.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
@@ -28,13 +28,13 @@ html {
     border-radius: 20px;
     border: 2px solid #a8e4ff;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .logo {
     width: 100px;
     margin-bottom: 10px;
 }
+
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -43,8 +43,9 @@ h1 {
 
 .input-group {
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
+
 .input-group label {
     display: block;
     font-size: 13px;
@@ -78,19 +79,32 @@ h1 {
 }
 
 #dashboard-container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #e1f1f9;
-    display: flex;
 }
 
 .sidebar {
     width: 280px;
+    height: 100vh;
     background: linear-gradient(180deg, #1e90ff, #2980b9);
     padding: 20px;
     color: white;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
 }
 
 .brand {
@@ -110,17 +124,19 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+
 .logo-circle img {
     width: 80%;
 }
-h2{
+
+h2 {
     font-size: 21px;
 }
 
 .menu-label {
     font-size: 11px;
     opacity: 0.7;
-    margin: 0px 0 8px 5px;
+    margin: 15px 0 8px 5px;
     font-weight: bold;
 }
 
@@ -136,10 +152,7 @@ h2{
     cursor: pointer;
     transition: 0.2s;
 }
-.menu-btn i {
-    margin-right: 10px;
-    width: 20px;
-}
+
 .menu-btn:hover, .menu-btn.active {
     background: rgba(255,255,255,0.3);
 }
@@ -148,6 +161,7 @@ h2{
     background: #2ecc71 !important;
     margin-top: 10px;
 }
+
 .btn-logout {
     background: #e74c3c !important;
 }
@@ -161,41 +175,20 @@ h2{
     align-items: center;
     gap: 10px;
 }
-.profile-pic {
-    width: 35px;
-    height: 35px;
-    background: white;
-    border-radius: 50%;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .welcome-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
-    padding: 60px;
+    padding: 30px;
     border-radius: 30px;
     border: 1px solid white;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.building-icon {
-    font-size: 50px;
-    color: #444;
-    margin-bottom: 15px;
-}
+
 .dash-title {
     color: #007bff;
     font-size: 30px;
     margin-bottom: 10px;
-}
-.instruction {
-    color: #666;
-    font-size: 14px;
 }
