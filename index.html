@@ -3,33 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadee Trading | Login</title>
+    <title>Nadee Trading POS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="login-container">
+<section id="login-container">
     <div class="login-box">
         <div class="logo-section">
-            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" alt="Nadee Trading Logo" class="logo">
+            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" alt="Logo" class="logo">
         </div>
-
         <h1>Welcome</h1>
-
         <form id="loginForm">
             <div class="input-group">
-                <label for="username">User name</label>
-                <input type="text" id="username" name="username" required>
+                <label>User name</label>
+                <input type="text" id="username" required>
             </div>
-
             <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <label>Password</label>
+                <input type="password" id="password" required>
             </div>
-
-            <button type="submit" class="login-btn">Login</button>
+            <button type="button" class="login-btn" onclick="goToDashboard()">Login</button>
         </form>
     </div>
-</div>
+</section>
+
+<section id="dashboard-container">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo-circle">
+                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" alt="Small Logo">
+            </div>
+            <div class="brand-info">
+                <h2>NADEE TRADING</h2>
+                <span>Admin Dashboard</span>
+            </div>
+        </div>
+
+        <nav class="menu-group">
+            <p class="menu-label">MANAGEMENT</p>
+            <button class="menu-btn active"><i class="fas fa-users"></i> Customer Management</button>
+            <button class="menu-btn"><i class="fas fa-box"></i> Item Management</button>
+            <button class="menu-btn"><i class="fas fa-truck-loading"></i> Supplier Management</button>
+        </nav>
+
+        <nav class="menu-group">
+            <p class="menu-label">OPERATIONS</p>
+            <button class="menu-btn"><i class="fas fa-shopping-cart"></i> Order Management</button>
+            <button class="menu-btn"><i class="fas fa-file-invoice-dollar"></i> Payment Details</button>
+            <button class="menu-btn"><i class="fas fa-shipping-fast"></i> Delivery Status</button>
+        </nav>
+
+        <div class="special-btns">
+            <button class="menu-btn btn-user"><i class="fas fa-user-shield"></i> User Accounts</button>
+            <button class="menu-btn btn-logout" onclick="goToLogin()"><i class="fas fa-sign-out-alt"></i> Logout / Exit</button>
+        </div>
+
+        <div class="user-profile">
+            <div class="profile-pic"></div>
+            <span>Admin</span>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="welcome-card">
+            <div class="building-icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <p>Welcome to</p>
+            <h1 class="dash-title">Nadee Trading Dashboard</h1>
+            <p class="instruction">Select an option from the menu to get started</p>
+        </div>
+    </main>
+</section>
+
+<!--<script>-->
+<!--    function goToDashboard() {-->
+<!--        document.getElementById('dashboard-container').scrollIntoView({ behavior: 'smooth' });-->
+<!--    }-->
+<!--    function goToLogin() {-->
+<!--        document.getElementById('login-container').scrollIntoView({ behavior: 'smooth' });-->
+<!--    }-->
+<!--</script>-->
 </body>
 </html>

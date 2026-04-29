@@ -2,30 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
+html {
+    scroll-behavior: smooth;
+}
+
+#login-container {
+    height: 100vh;
+    width: 100%;
     background: url('assests/image/bg t.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.login-container {
-    width: 100%;
-    display: flex;
-    /*width: 500px;*/
-    height: 500px;
     justify-content: flex-end;
     padding-right: 10%;
 }
 
 .login-box {
     background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     width: 400px;
     padding: 40px;
     border-radius: 20px;
@@ -35,63 +32,170 @@ body {
 }
 
 .logo {
-    width: 120px;
-    margin-bottom: 20px;
+    width: 100px;
+    margin-bottom: 10px;
 }
-
 h1 {
-    font-size: 32px;
-    color: #1a1a1a;
+    font-size: 28px;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
 .input-group {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
 .input-group label {
     display: block;
-    font-size: 14px;
-    color: #333;
+    font-size: 13px;
     margin-bottom: 5px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background: rgba(255,255,255,0.8);
     outline: none;
-    transition: 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #63ccff;
-    box-shadow: 0 0 8px rgba(99, 204, 255, 0.4);
 }
 
 .login-btn {
     width: 100%;
-    padding: 14px;
-    background-color: #63ccff;
+    padding: 12px;
+    background: #63ccff;
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 5px;
 }
 
 .login-btn:hover {
-    background-color: #4db8ff;
+    background: #4db8ff;
     transform: translateY(-2px);
 }
 
-/*#loginForm{*/
-/*    margin-top: 1px;*/
-/*}*/
+#dashboard-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #e1f1f9;
+    display: flex;
+}
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #1e90ff, #2980b9);
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.logo-circle {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-circle img {
+    width: 80%;
+}
+h2{
+    font-size: 21px;
+}
+
+.menu-label {
+    font-size: 11px;
+    opacity: 0.7;
+    margin: 0px 0 8px 5px;
+    font-weight: bold;
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.menu-btn i {
+    margin-right: 10px;
+    width: 20px;
+}
+.menu-btn:hover, .menu-btn.active {
+    background: rgba(255,255,255,0.3);
+}
+
+.btn-user {
+    background: #2ecc71 !important;
+    margin-top: 10px;
+}
+.btn-logout {
+    background: #e74c3c !important;
+}
+
+.user-profile {
+    margin-top: auto;
+    background: rgba(255,255,255,0.15);
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    padding: 60px;
+    border-radius: 30px;
+    border: 1px solid white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.building-icon {
+    font-size: 50px;
+    color: #444;
+    margin-bottom: 15px;
+}
+.dash-title {
+    color: #007bff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.instruction {
+    color: #666;
+    font-size: 14px;
+}
