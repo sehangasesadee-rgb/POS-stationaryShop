@@ -4,83 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadee Trading POS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<section id="login-container">
-    <div class="login-box">
-        <div class="logo-section">
-            <img src="assests/image/Nadee Trading Company (Pvt) Ltd.png" alt="Logo" class="logo">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body class="bg-light">
+
+<!-- LOGIN -->
+<div id="login-container" class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 350px;">
+        <div class="text-center mb-3">
+            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="img-fluid" style="max-height: 80px;">
         </div>
-        <h1>Welcome</h1>
-        <form id="loginForm">
-            <div class="input-group">
-                <label>User name</label>
-                <input type="text" id="username" required>
+
+        <h4 class="text-center mb-3">Welcome</h4>
+
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+
+        <button class="btn btn-primary w-100" onclick="goToDashboard()">Login</button>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="home-content" class="flex-grow-1 p-4">
+
+    <div class="d-flex">
+
+        <!-- SIDEBAR -->
+        <div class="bg-dark text-white p-3 vh-100" style="width: 250px;">
+
+            <div class="text-center mb-4">
+                <h6>NADEE TRADING</h6>
+                <small>Admin Dashboard</small>
             </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" required>
+
+            <hr>
+
+            <p class="text-secondary small">MANAGEMENT</p>
+
+            <button class="btn btn-outline-light w-100 mb-2 text-start" onclick="showCustomer()">
+                <i class="fas fa-users me-2"></i> Customer
+            </button>
+
+            <button class="btn btn-outline-light w-100 mb-2 text-start">
+                <i class="fas fa-box me-2"></i> Item
+            </button>
+
+            <button class="btn btn-outline-light w-100 mb-3 text-start">
+                <i class="fas fa-truck me-2"></i> Supplier
+            </button>
+
+            <p class="text-secondary small">OPERATIONS</p>
+
+            <button class="btn btn-outline-light w-100 mb-2 text-start">
+                <i class="fas fa-shopping-cart me-2"></i> Orders
+            </button>
+
+            <button class="btn btn-outline-light w-100 mb-2 text-start">
+                <i class="fas fa-file-invoice me-2"></i> Payments
+            </button>
+
+            <hr>
+
+            <button class="btn btn-danger w-100" onclick="goToLogin()">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+            </button>
+
+
+        </div>
+
+        <!-- CONTENT -->
+        <div class="flex-grow-1 p-4">
+
+            <div class="card shadow-sm text-center p-5">
+                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
+                     class="mb-3 d-block mx-auto"
+                     style="width: 300px;">
+
+                <h3>Nadee Trading Dashboard</h3>
+                <p class="text-muted">Select an option from the menu to get started</p>
             </div>
-            <button type="button" class="login-btn" onclick="goToDashboard()">Login</button>
-        </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<section class="customer_section d-none">
+    <div class="container-fluid py-5">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-12 col-lg-5">
+                <div class="p-4 bg-white border rounded-4 shadow-sm">
+                    <h1 class="text-center mb-4 fw-bold" style="color: blue">Customer Management</h1>
+                    <form id="customerForm">
+                        <div class="mb-3">
+                            <label for="course_id_input" class="form-label fw-medium">Customer ID</label>
+                            <input type="number" class="form-control" id="course_id_input" placeholder="001">
+                        </div>
+                        <div class="mb-3">
+                            <label for="course_name_input" class="form-label fw-medium">Customer Name</label>
+                            <input type="text" class="form-control" id="course_name_input" placeholder="Dihini">
+                        </div>
+                        <div class="mb-3">
+                            <label for="course_Phone_input" class="form-label fw-medium">Phone Number</label>
+                            <input type="text" class="form-control" id="course_Phone_input" placeholder="07xxxxxxxx">
+                        </div>
+                        <div class="mb-3">
+                            <label for="course_email_input" class="form-label fw-medium">Email Address</label>
+                            <input type="email" class="form-control" id="course_email_input" placeholder="example@gmail.com">
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
+                            <button type="button" id="course_save_btn" class="btn btn-success px-4">Save</button>
+                            <button type="button" id="course_update_btn" class="btn btn-primary px-4">Update</button>
+                            <button type="button" id="course_delete_btn" class="btn btn-danger px-4">Delete</button>
+                            <button type="reset" id="course_reset_btn" class="btn btn-info text-white px-4">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <div class="bg-white border rounded-4 shadow-sm overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-primary">
+                            <tr>
+                                <th scope="col" class="py-3 ps-3">ID</th>
+                                <th scope="col" class="py-3">Name</th>
+                                <th scope="col" class="py-3">Phone</th>
+                                <th scope="col" class="py-3">Email</th>
+                            </tr>
+                            </thead>
+                            <tbody id="course_tbody">
+                            <tr>
+                                <td colspan="4" class="text-center text-muted py-4"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 </section>
 
-<section id="dashboard-container" style="display: none;">
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="logo-circle">
-                <img src="assests/image/Nadee Trading Company (Pvt) Ltd.png" alt="Small Logo">
-            </div>
-            <div class="brand-info">
-                <h2>NADEE TRADING</h2>
-                <span>Admin Dashboard</span>
-            </div>
-        </div>
+<script>
+    function showCustomer() {
+        document.getElementById("home-content").classList.add("d-none");
+        document.querySelector(".customer_section").classList.remove("d-none");
+    }
 
-        <nav class="menu-group">
-            <p class="menu-label">MANAGEMENT</p>
-            <button class="menu-btn active"><i class="fas fa-users"></i> Customer Management</button>
-            <button class="menu-btn"><i class="fas fa-box"></i> Item Management</button>
-            <button class="menu-btn"><i class="fas fa-truck-loading"></i> Supplier Management</button>
-        </nav>
-
-        <nav class="menu-group">
-            <p class="menu-label">OPERATIONS</p>
-            <button class="menu-btn"><i class="fas fa-shopping-cart"></i> Order Management</button>
-            <button class="menu-btn"><i class="fas fa-file-invoice-dollar"></i> Payment Details</button>
-            <button class="menu-btn"><i class="fas fa-shipping-fast"></i> Delivery Status</button>
-        </nav>
-
-        <div class="special-btns">
-            <button class="menu-btn btn-user"><i class="fas fa-user-shield"></i> User Accounts</button>
-            <button class="menu-btn btn-logout" onclick="goToLogin()"><i class="fas fa-sign-out-alt"></i> Logout / Exit</button>
-        </div>
-
-        <div class="user-profile">
-            <div class="profile-pic"></div>
-            <span>Admin</span>
-            <i class="fas fa-chevron-right"></i>
-        </div>
-    </aside>
-
-    <main class="main-content">
-        <div class="welcome-card">
-            <div class="building-icon">
-                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png">
-            </div>
-            <p>Welcome to</p>
-            <h1 class="dash-title">Nadee Trading Dashboard</h1>
-            <p class="instruction">Select an option from the menu to get started</p>
-        </div>
-        <div style="height: 1000px;"></div>
-    </main>
-</section>
+    function showHome() {
+        document.getElementById("home-content").classList.remove("d-none");
+        document.querySelector(".customer_section").classList.add("d-none");
+    }
+</script>
 
 <script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
