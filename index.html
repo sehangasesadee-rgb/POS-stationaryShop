@@ -5,53 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadee Trading POS</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
 
-<body class="bg-light">
+<body class="bg-light overflow-hidden">
 
-<!-- LOGIN -->
-<div id="login-container" class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow p-4" style="width: 350px;">
+
+<div id="login-container" class="d-flex justify-content-center align-items-center vh-100 overflow-hidden">
+    <div class="card shadow p-3" style="width: 340px;">
+
         <div class="text-center mb-3">
-            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="img-fluid" style="max-height: 80px;">
+            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
+                 class="img-fluid" style="max-height: 70px;">
         </div>
 
-        <h4 class="text-center mb-3">Welcome</h4>
+        <h5 class="text-center mb-3">Welcome</h5>
 
-        <div class="mb-3">
-            <label class="form-label">User Name</label>
-            <input type="text" class="form-control" id="username">
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
-        </div>
+        <input type="text" class="form-control mb-2" placeholder="Username">
+        <input type="password" class="form-control mb-3" placeholder="Password">
 
         <button class="btn btn-primary w-100" onclick="goToDashboard()">Login</button>
     </div>
 </div>
 
-<!-- DASHBOARD -->
-<div id="home-content" class="flex-grow-1 p-4">
 
-    <div class="d-flex">
+<div id="app" class="d-none vh-100 overflow-hidden">
 
-        <!-- SIDEBAR -->
-        <div class="bg-dark text-white p-3 vh-100" style="width: 250px;">
+    <div class="d-flex vh-100 overflow-hidden">
 
-            <div class="text-center mb-4">
+
+        <div class="text-white p-3 vh-100 overflow-hidden shadow"
+             style="width: 240px; background-color: #2196F3;">
+            <div class="text-center mb-3">
                 <h6>NADEE TRADING</h6>
-                <small>Admin Dashboard</small>
+                <small>Admin</small>
             </div>
 
             <hr>
-
-            <p class="text-secondary small">MANAGEMENT</p>
 
             <button class="btn btn-outline-light w-100 mb-2 text-start" onclick="showCustomer()">
                 <i class="fas fa-users me-2"></i> Customer
@@ -65,8 +56,7 @@
                 <i class="fas fa-truck me-2"></i> Supplier
             </button>
 
-            <p class="text-secondary small">OPERATIONS</p>
-
+            <p class="text-white small opacity-75">OPERATIONS</p>
             <button class="btn btn-outline-light w-100 mb-2 text-start">
                 <i class="fas fa-shopping-cart me-2"></i> Orders
             </button>
@@ -77,112 +67,149 @@
 
             <hr>
 
-            <button class="btn btn-danger w-100" onclick="goToLogin()">
+            <button class="btn btn-danger w-100" onclick="logout()">
                 <i class="fas fa-sign-out-alt me-2"></i> Logout
             </button>
 
-
         </div>
 
-        <!-- CONTENT -->
-        <div class="flex-grow-1 p-4">
 
-            <div class="card shadow-sm text-center p-5">
-                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
-                     class="mb-3 d-block mx-auto"
-                     style="width: 300px;">
+        <div class="flex-grow-1 p-3 vh-100 overflow-hidden">
 
-                <h3>Nadee Trading Dashboard</h3>
-                <p class="text-muted">Select an option from the menu to get started</p>
+            <div id="home">
+                <div class="card shadow-sm text-center p-4">
+                    <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
+                         class="mb-2 mx-auto d-block"
+                         style="width: 220px;">
+
+                    <h4>Nadee Trading Dashboard</h4>
+                    <p class="text-muted mb-0">Select menu option</p>
+                </div>
+            </div>
+
+
+            <div id="customer" class="d-none container-fluid py-2">
+
+                <div class="row g-2">
+
+                    <div class="col-lg-5">
+                        <div class="p-3 bg-white border rounded shadow-sm">
+
+                            <h5 class="text-center mb-3 text-primary fw-bold">
+                                Customer Management
+                            </h5>
+
+                            <input type="number" class="form-control mb-2" id="id" placeholder="ID">
+                            <input type="text" class="form-control mb-2" id="name" placeholder="Name">
+                            <input type="text" class="form-control mb-2" id="phone" placeholder="Phone">
+                            <input type="text" class="form-control mb-3" id="address" placeholder="Address">
+                            <input type="email" class="form-control mb-3" id="email" placeholder="Email">
+
+                            <div class="d-flex gap-2 justify-content-center">
+                                <button class="btn btn-success btn-sm" onclick="addCustomer()">Save</button>
+                                <button class="btn btn-primary btn-sm" onclick="updateCustomer()">Update</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteCustomer()">Delete</button>
+                                <button class="btn btn-warning btn-sm" onclick="reset()">Reset</button>                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="bg-white border rounded shadow-sm p-2">
+
+                            <table class="table table-sm mb-0">
+                                <thead class="table-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tableBody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
-
     </div>
-
 </div>
 
 
-
-
-
-
-<section class="customer_section d-none">
-    <div class="container-fluid py-5">
-        <div class="row g-4 justify-content-center">
-
-            <div class="col-12 col-lg-5">
-                <div class="p-4 bg-white border rounded-4 shadow-sm">
-                    <h1 class="text-center mb-4 fw-bold" style="color: blue">Customer Management</h1>
-                    <form id="customerForm">
-                        <div class="mb-3">
-                            <label for="course_id_input" class="form-label fw-medium">Customer ID</label>
-                            <input type="number" class="form-control" id="course_id_input" placeholder="001">
-                        </div>
-                        <div class="mb-3">
-                            <label for="course_name_input" class="form-label fw-medium">Customer Name</label>
-                            <input type="text" class="form-control" id="course_name_input" placeholder="Dihini">
-                        </div>
-                        <div class="mb-3">
-                            <label for="course_Phone_input" class="form-label fw-medium">Phone Number</label>
-                            <input type="text" class="form-control" id="course_Phone_input" placeholder="07xxxxxxxx">
-                        </div>
-                        <div class="mb-3">
-                            <label for="course_email_input" class="form-label fw-medium">Email Address</label>
-                            <input type="email" class="form-control" id="course_email_input" placeholder="example@gmail.com">
-                        </div>
-
-                        <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
-                            <button type="button" id="course_save_btn" class="btn btn-success px-4">Save</button>
-                            <button type="button" id="course_update_btn" class="btn btn-primary px-4">Update</button>
-                            <button type="button" id="course_delete_btn" class="btn btn-danger px-4">Delete</button>
-                            <button type="reset" id="course_reset_btn" class="btn btn-info text-white px-4">Reset</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-7">
-                <div class="bg-white border rounded-4 shadow-sm overflow-hidden">
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
-                            <thead class="table-primary">
-                            <tr>
-                                <th scope="col" class="py-3 ps-3">ID</th>
-                                <th scope="col" class="py-3">Name</th>
-                                <th scope="col" class="py-3">Phone</th>
-                                <th scope="col" class="py-3">Email</th>
-                            </tr>
-                            </thead>
-                            <tbody id="course_tbody">
-                            <tr>
-                                <td colspan="4" class="text-center text-muted py-4"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-</section>
-
 <script>
-    function showCustomer() {
-        document.getElementById("home-content").classList.add("d-none");
-        document.querySelector(".customer_section").classList.remove("d-none");
+
+    function goToDashboard(){
+        document.getElementById("login-container").classList.add("d-none");
+        document.getElementById("app").classList.remove("d-none");
     }
 
-    function showHome() {
-        document.getElementById("home-content").classList.remove("d-none");
-        document.querySelector(".customer_section").classList.add("d-none");
+    function logout(){
+        document.getElementById("app").classList.add("d-none");
+        document.getElementById("login-container").classList.remove("d-none");
     }
+
+    function showCustomer(){
+        document.getElementById("home").classList.add("d-none");
+        document.getElementById("customer").classList.remove("d-none");
+    }
+
+    let customers = [];
+    let selectedIndex = -1;
+
+    function addCustomer(){
+        let c = {
+            id: id.value,
+            name: name.value,
+            phone: phone.value,
+            email: email.value
+        };
+        customers.push(c);
+        render();
+    }
+
+    function render(){
+        tableBody.innerHTML = "";
+        customers.forEach((c,i)=>{
+            tableBody.innerHTML += `
+                <tr onclick="selectRow(${i})">
+                    <td>${c.id}</td>
+                    <td>${c.name}</td>
+                    <td>${c.phone}</td>
+                    <td>${c.email}</td>
+                </tr>`;
+        });
+    }
+
+    function selectRow(i){
+        selectedIndex = i;
+        let c = customers[i];
+        id.value = c.id;
+        name.value = c.name;
+        phone.value = c.phone;
+        email.value = c.email;
+    }
+
+    function updateCustomer(){
+        if(selectedIndex === -1) return;
+        customers[selectedIndex] = {
+            id:id.value,
+            name:name.value,
+            phone:phone.value,
+            email:email.value
+        };
+        render();
+    }
+
+    function deleteCustomer(){
+        if(selectedIndex === -1) return;
+        customers.splice(selectedIndex,1);
+        render();
+    }
+
 </script>
-
-<script src="script.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
