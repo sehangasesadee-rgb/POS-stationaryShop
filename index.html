@@ -15,27 +15,80 @@
 
 <body class="bg-light overflow-hidden">
 
-<!-- LOGIN -->
-<div id="login-container" class="d-flex justify-content-center align-items-center vh-100 overflow-hidden">
-    <div class="card shadow p-3" style="width: 340px;">
-        <div class="text-center mb-3">
-            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="img-fluid"
-                 style="max-height: 70px;">
+<div id="login-container"
+     class="vh-100 d-flex justify-content-end align-items-center pe-5"
+     style="background: url('assests/image/bg t.jpg') center/cover no-repeat;">
+
+    <div class="card border-0 shadow-lg rounded-5 px-4"
+         style="
+            width: 350px;
+            height: 455px;
+            background: rgba(255,255,255,0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid #74d0ff !important;
+         ">
+
+        <div class="d-flex flex-column justify-content-center h-100">
+
+            <div class="text-center mb-3">
+                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
+                     class="img-fluid rounded-3"
+                     style="max-height:58px;">
+            </div>
+
+            <h2 class="text-center fw-semibold mb-4"
+                style="
+                    font-family: Georgia, serif;
+                    font-size: 42px;
+                    color:#1f1f1f;
+                ">
+                Welcome
+            </h2>
+
+            <div class="mb-3">
+                <label class="form-label small fw-medium text-dark mb-1">
+                    User name
+                </label>
+                <input type="text"
+                       id="login-user"
+                       class="form-control rounded-3 border-0 shadow-sm"
+                       style="height:44px;">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label small fw-medium text-dark mb-1">
+                    Password
+                </label>
+                <input type="password"
+                       id="login-pass"
+                       class="form-control rounded-3 border-0 shadow-sm"
+                       style="height:44px;"
+                       onkeydown="if(event.key==='Enter')doLogin()">
+            </div>
+
+            <div id="login-err"
+                 class="alert alert-danger py-1 small d-none mb-3">
+                Invalid username or password.
+            </div>
+
+            <button class="btn btn-info text-white fw-semibold rounded-3 mx-auto shadow-sm"
+                    style="
+                        width: 155px;
+                        height: 44px;
+                        font-size: 15px;
+                    "
+                    onclick="doLogin()">
+                Login
+            </button>
+
         </div>
-        <h5 class="text-center mb-3">Welcome</h5>
-        <input type="text" id="login-user" class="form-control mb-2" placeholder="Username">
-        <input type="password" id="login-pass" class="form-control mb-2" placeholder="Password"
-               onkeydown="if(event.key==='Enter')doLogin()">
-        <div id="login-err" class="alert alert-danger py-1 small d-none mb-2">Invalid username or password.</div>
-        <button class="btn btn-primary w-100" onclick="doLogin()">Login</button>
     </div>
 </div>
 
-<!-- APP -->
 <div id="app" class="d-none vh-100 overflow-hidden">
     <div class="d-flex vh-100 overflow-hidden">
 
-        <!-- SIDEBAR -->
         <div class="text-white p-3 vh-100 overflow-hidden shadow" style="width: 240px; background-color: #2196F3;">
             <div class="text-center mb-3">
                 <h6>NADEE TRADING</h6>
@@ -63,7 +116,6 @@
             </button>
         </div>
 
-        <!-- CONTENT -->
         <div class="flex-grow-1 p-3 vh-100 overflow-auto">
 
             <!--            &lt;!&ndash; HOME &ndash;&gt;-->
@@ -75,7 +127,6 @@
             <!--                </div>-->
             <!--            </div>-->
 
-            <!--            DASHBOARD-->
             <div id="home">
                 <div class="row mb-4">
                     <div class="col-12">
@@ -206,7 +257,6 @@
                 </div>
             </div>
 
-            <!-- CUSTOMER -->
             <div id="customer" class="d-none container-fluid py-2">
                 <div class="row g-2">
                     <div class="col-lg-5">
@@ -249,7 +299,6 @@
                 </div>
             </div>
 
-            <!-- ITEM -->
             <div id="item" class="d-none container-fluid py-2">
                 <div class="row g-2">
                     <div class="col-lg-5">
@@ -301,7 +350,6 @@
                 </div>
             </div>
 
-            <!-- ORDER -->
             <div id="order" class="d-none container-fluid py-2">
                 <div class="container-fluid" style="max-width: 1000px;">
                     <div class="d-flex align-items-center mb-3">
@@ -404,7 +452,6 @@
                 </div>
             </div>
 
-            <!-- ORDER DETAILS SECTION -->
             <div id="order-details" class="d-none container-fluid py-2">
                 <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
                     <div class="card-header bg-primary text-white p-3">
