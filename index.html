@@ -7,7 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .rounded-tl-0 { border-top-left-radius: 0 !important; }
+        .rounded-tl-0 {
+            border-top-left-radius: 0 !important;
+        }
     </style>
 </head>
 
@@ -17,11 +19,13 @@
 <div id="login-container" class="d-flex justify-content-center align-items-center vh-100 overflow-hidden">
     <div class="card shadow p-3" style="width: 340px;">
         <div class="text-center mb-3">
-            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="img-fluid" style="max-height: 70px;">
+            <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="img-fluid"
+                 style="max-height: 70px;">
         </div>
         <h5 class="text-center mb-3">Welcome</h5>
         <input type="text" id="login-user" class="form-control mb-2" placeholder="Username">
-        <input type="password" id="login-pass" class="form-control mb-2" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()">
+        <input type="password" id="login-pass" class="form-control mb-2" placeholder="Password"
+               onkeydown="if(event.key==='Enter')doLogin()">
         <div id="login-err" class="alert alert-danger py-1 small d-none mb-2">Invalid username or password.</div>
         <button class="btn btn-primary w-100" onclick="doLogin()">Login</button>
     </div>
@@ -51,7 +55,7 @@
                 <i class="fas fa-shopping-cart me-2"></i> Orders
             </button>
             <button class="btn btn-outline-light w-100 mb-2 text-start" onclick="showOrderDetails()">
-                <i class="fa-solid fa-file-contract"></i>  Order Details
+                <i class="fa-solid fa-file-contract"></i> Order Details
             </button>
             <hr>
             <button class="btn btn-danger w-100" onclick="logout()">
@@ -62,20 +66,21 @@
         <!-- CONTENT -->
         <div class="flex-grow-1 p-3 vh-100 overflow-auto">
 
-<!--            &lt;!&ndash; HOME &ndash;&gt;-->
-<!--            <div id="home">-->
-<!--                <div class="card shadow-sm text-center p-4">-->
-<!--                    <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="mb-2 mx-auto d-block" style="width: 220px;">-->
-<!--                    <h4>Nadee Trading Dashboard</h4>-->
-<!--                    <p class="text-muted mb-0">Select menu option</p>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            &lt;!&ndash; HOME &ndash;&gt;-->
+            <!--            <div id="home">-->
+            <!--                <div class="card shadow-sm text-center p-4">-->
+            <!--                    <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="mb-2 mx-auto d-block" style="width: 220px;">-->
+            <!--                    <h4>Nadee Trading Dashboard</h4>-->
+            <!--                    <p class="text-muted mb-0">Select menu option</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
-<!--            DASHBOARD-->
+            <!--            DASHBOARD-->
             <div id="home">
                 <div class="row mb-4">
                     <div class="col-12">
-                        <div class="card border-0 shadow-sm rounded-4 p-4" style="background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); color: white;">
+                        <div class="card border-0 shadow-sm rounded-4 p-4"
+                             style="background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); color: white;">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
                                     <h2 class="fw-bold mb-1">Welcome Back, Admin!</h2>
@@ -146,9 +151,12 @@
                         <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
                             <h5 class="fw-bold mb-3"><i class="fas fa-history me-2 text-primary"></i>Quick Overview</h5>
                             <div class="p-5 text-center bg-light rounded-4 border-dashed">
-                                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png" class="opacity-25 mb-3" style="width: 150px;">
-                                <p class="text-muted">Navigate through the sidebar to manage your business operations.</p>
-                                <button class="btn btn-primary rounded-pill px-4" onclick="showOrder()">+ New Order</button>
+                                <img src="assests/image/Nadee%20Trading%20Company%20(Pvt)%20Ltd.png"
+                                     class="opacity-25 mb-3" style="width: 150px;">
+                                <p class="text-muted">Navigate through the sidebar to manage your business
+                                    operations.</p>
+                                <button class="btn btn-primary rounded-pill px-4" onclick="showOrder()">+ New Order
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -168,13 +176,13 @@
                                     <span><i class="fas fa-pencil-alt me-2 text-warning"></i> Pencils</span>
                                     <span class="badge bg-warning rounded-pill">Active</span>
                                 </li>
-<!--                                <li class="list-group-item d-flex justify-content-between align-item-center px-0">-->
-<!--                                    <span><i class="fas fa-ruler me-2 text-primary"></i>Ruler</span>-->
-<!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
+                                <!--                                <li class="list-group-item d-flex justify-content-between align-item-center px-0">-->
+                                <!--                                    <span><i class="fas fa-ruler me-2 text-primary"></i>Ruler</span>-->
+                                <!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
 
-<!--                                </li>-->
+                                <!--                                </li>-->
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                   <span><i class="fas fa-ruler me-2" style="color: #0DCAF0"></i>Ruler</span>
+                                    <span><i class="fas fa-ruler me-2" style="color: #0DCAF0"></i>Ruler</span>
                                     <span class="badge rounded-pill" style="background-color: #0DCAF0">Active</span>
                                 </li>
 
@@ -183,14 +191,14 @@
                                     <span class="badge bg-danger rounded-pill">Active</span>
 
                                 </li>
-<!--                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">-->
-<!--                                    <span><i class="fa-solid fa-ruler-horizontal" style="color: rgb(116, 192, 252);"></i> Ruler</span>-->
-<!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
-<!--                                </li>-->
-<!--                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">-->
-<!--                                    <span><i class="fa-solid fa-eraser" style="color: rgb(255, 59, 59);"></i> Eraser</span>-->
-<!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
-<!--                                </li>-->
+                                <!--                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">-->
+                                <!--                                    <span><i class="fa-solid fa-ruler-horizontal" style="color: rgb(116, 192, 252);"></i> Ruler</span>-->
+                                <!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
+                                <!--                                </li>-->
+                                <!--                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">-->
+                                <!--                                    <span><i class="fa-solid fa-eraser" style="color: rgb(255, 59, 59);"></i> Eraser</span>-->
+                                <!--                                    <span class="badge bg-warning rounded-pill">Active</span>-->
+                                <!--                                </li>-->
 
                             </ul>
                         </div>
@@ -226,7 +234,13 @@
                         <div class="bg-white border rounded shadow-sm p-2">
                             <table class="table table-sm table-hover mb-0">
                                 <thead class="table-primary">
-                                <tr><th>ID</th><th>Name</th><th>Phone</th><th>Address</th><th>Email</th></tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                </tr>
                                 </thead>
                                 <tbody id="tableBody"></tbody>
                             </table>
@@ -248,7 +262,8 @@
                             <label class="form-label fw-bold">Quantity</label>
                             <input type="number" class="form-control mb-2" id="Qty" placeholder="Quantity" min="0">
                             <label class="form-label fw-bold">Unit Price</label>
-                            <input type="number" class="form-control mb-3" id="unitPrice" placeholder="Unit Price" min="0" step="0.01">
+                            <input type="number" class="form-control mb-3" id="unitPrice" placeholder="Unit Price"
+                                   min="0" step="0.01">
                             <label class="form-label fw-bold">Category</label>
                             <select class="form-select mb-3" id="category">
                                 <option value="">Select Category</option>
@@ -271,7 +286,13 @@
                         <div class="bg-white border rounded shadow-sm p-2">
                             <table class="table table-sm table-hover mb-0">
                                 <thead class="table-primary">
-                                <tr><th>ID</th><th>Name</th><th>Qty</th><th>Price</th><th>Category</th></tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                </tr>
                                 </thead>
                                 <tbody id="tableBody-I"></tbody>
                             </table>
@@ -291,7 +312,8 @@
                         <div class="d-flex align-items-center gap-4">
                             <div class="d-flex align-items-center gap-2">
                                 <span class="text-primary fw-bold small">Order ID:</span>
-                                <input type="text" id="O-id" class="form-control form-control-sm border-primary" style="width: 100px;" readonly>
+                                <input type="text" id="O-id" class="form-control form-control-sm border-primary"
+                                       style="width: 100px;" readonly>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span class="text-primary fw-bold small">Date:</span>
@@ -304,7 +326,8 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label text-secondary fw-semibold small">Select Customer</label>
-                                <select id="O-cust-select" class="form-select border-primary shadow-sm" onchange="loadOrderCustomerDetails()">
+                                <select id="O-cust-select" class="form-select border-primary shadow-sm"
+                                        onchange="loadOrderCustomerDetails()">
                                     <option value="" selected disabled>Choose Customer</option>
                                 </select>
                             </div>
@@ -315,7 +338,8 @@
 
                             <div class="col-md-6">
                                 <label class="form-label text-secondary fw-semibold small">Select Item</label>
-                                <select id="O-item-select" class="form-select border-primary shadow-sm" onchange="loadOrderItemDetails()">
+                                <select id="O-item-select" class="form-select border-primary shadow-sm"
+                                        onchange="loadOrderItemDetails()">
                                     <option value="" selected disabled>Choose Item</option>
                                 </select>
                             </div>
@@ -341,15 +365,25 @@
                                 <input type="number" id="O-qty" class="form-control border-primary shadow-sm" min="1">
                             </div>
                             <div class="col-md-9 d-flex align-items-end">
-                                <button class="btn btn-primary px-4 fw-bold shadow-sm" onclick="addToCart()">+ Add to Cart</button>
+                                <button class="btn btn-primary px-4 fw-bold shadow-sm" onclick="addToCart()">+ Add to
+                                    Cart
+                                </button>
                             </div>
 
                             <div class="col-12 mt-4">
                                 <h6 class="text-primary fw-bold mb-2">Order Cart</h6>
-                                <div class="table-responsive border rounded-3 overflow-hidden" style="max-height: 250px;">
+                                <div class="table-responsive border rounded-3 overflow-hidden"
+                                     style="max-height: 250px;">
                                     <table class="table table-hover align-middle mb-0 text-center">
                                         <thead class="table-light text-secondary small">
-                                        <tr><th>Item ID</th><th>Description</th><th>Qty</th><th>Unit Price</th><th>Total</th><th>Remove</th></tr>
+                                        <tr>
+                                            <th>Item ID</th>
+                                            <th>Description</th>
+                                            <th>Qty</th>
+                                            <th>Unit Price</th>
+                                            <th>Total</th>
+                                            <th>Remove</th>
+                                        </tr>
                                         </thead>
                                         <tbody id="cartTableBody" class="bg-white"></tbody>
                                     </table>
@@ -360,8 +394,11 @@
 
                     <div class="card border-0 shadow rounded-4 p-3 bg-white">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="text-primary fw-bold mb-0">NET TOTAL: <span class="text-success">Rs <span id="net-total">0.00</span></span></h4>
-                            <button class="btn btn-success btn-lg px-5 fw-bold shadow" onclick="placeOrder()">✓ Place Order</button>
+                            <h4 class="text-primary fw-bold mb-0">NET TOTAL: <span class="text-success">Rs <span
+                                    id="net-total">0.00</span></span></h4>
+                            <button class="btn btn-success btn-lg px-5 fw-bold shadow" onclick="placeOrder()">✓ Place
+                                Order
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -404,367 +441,13 @@
     </div>
 </div>
 
-<script>
-    // ===================== LOGIN =====================
-    const USERS = { admin: "admin123", cashier: "cash456" };
-
-    function doLogin() {
-        const u = document.getElementById("login-user").value.trim();
-        const p = document.getElementById("login-pass").value;
-        if (USERS[u] && USERS[u] === p) {
-            document.getElementById("login-err").classList.add("d-none");
-            document.getElementById("login-container").classList.add("d-none");
-            document.getElementById("app").classList.remove("d-none");
-        } else {
-            document.getElementById("login-err").classList.remove("d-none");
-        }
-    }
-
-    function logout() {
-        document.getElementById("app").classList.add("d-none");
-        document.getElementById("login-container").classList.remove("d-none");
-        document.getElementById("login-user").value = "";
-        document.getElementById("login-pass").value = "";
-        document.getElementById("login-err").classList.add("d-none");
-    }
-
-    // ===================== NAVIGATION =====================
-    function hideAllSections() {
-        ["home","customer","item","order","order-details"].forEach(id => {
-            document.getElementById(id).classList.add("d-none");
-        });
-    }
-    function showHome() {hideAllSections(); document.getElementById("home").classList.remove("d-none");}
-    function showCustomer() { hideAllSections(); document.getElementById("customer").classList.remove("d-none"); renderCustomers(); }
-    function showItem()     { hideAllSections(); document.getElementById("item").classList.remove("d-none"); renderItems(); }
-    function showOrderDetails() { hideAllSections(); document.getElementById("order-details").classList.remove("d-none"); renderCart() }
-    function showOrder() {
-        hideAllSections();
-        document.getElementById("order").classList.remove("d-none");
-        document.getElementById("O-date").innerText = new Date().toISOString().split('T')[0];
-        document.getElementById("O-id").value = "ORD-" + Math.floor(Math.random() * 9000 + 1000);
-        cart = [];
-        renderCart();
-        loadOrderSelectors();
-    }
-
-    // ===================== AUTO ID =====================
-    function genCustId() { return "C" + String(customers.length + 1).padStart(3, "0"); }
-    function genItemId() { return "I" + String(items.length + 1).padStart(3, "0"); }
-
-    // ===================== CUSTOMER =====================
-    let customers = [];
-    let selectedIndex = -1;
-
-    function addCustomer() {
-        const name = document.getElementById("name").value.trim();
-        if (!name) { alert("Name is required."); return; }
-        customers.push({
-            id: genCustId(), name,
-            phone:   document.getElementById("phone").value.trim(),
-            address: document.getElementById("address").value.trim(),
-            email:   document.getElementById("email").value.trim()
-        });
-        renderCustomers(); reset();
-    }
-
-    function renderCustomers() {
-        const tbody = document.getElementById("tableBody");
-        tbody.innerHTML = "";
-        customers.forEach((c, i) => {
-            tbody.innerHTML += `<tr onclick="selectRow(${i})" style="cursor:pointer" class="${selectedIndex===i?'table-info':''}">
-                <td>${c.id}</td><td>${c.name}</td><td>${c.phone}</td><td>${c.address}</td><td>${c.email}</td></tr>`;
-        });
-    }
-
-    function selectRow(i) {
-        selectedIndex = i;
-        const c = customers[i];
-        document.getElementById("id").value      = c.id;
-        document.getElementById("name").value    = c.name;
-        document.getElementById("phone").value   = c.phone;
-        document.getElementById("address").value = c.address;
-        document.getElementById("email").value   = c.email;
-        renderCustomers();
-    }
-
-    function updateCustomer() {
-        if (selectedIndex === -1) { alert("Select a customer first."); return; }
-        customers[selectedIndex] = {
-            id: customers[selectedIndex].id,
-            name:    document.getElementById("name").value.trim(),
-            phone:   document.getElementById("phone").value.trim(),
-            address: document.getElementById("address").value.trim(),
-            email:   document.getElementById("email").value.trim()
-        };
-        renderCustomers(); reset();
-    }
-
-    function deleteCustomer() {
-        if (selectedIndex === -1) { alert("Select a customer first."); return; }
-        if (!confirm("Delete this customer?")) return;
-        customers.splice(selectedIndex, 1);
-        renderCustomers(); reset();
-    }
-
-    function reset() {
-        ["id","name","phone","address","email"].forEach(id => document.getElementById(id).value = "");
-        selectedIndex = -1;
-        renderCustomers();
-    }
-
-    // ===================== ITEM =====================
-    let items = [];
-    let selectedItemIndex = -1;
-
-    function addItem() {
-        const name  = document.getElementById("I-name").value.trim();
-        const qty   = parseInt(document.getElementById("Qty").value);
-        const price = parseFloat(document.getElementById("unitPrice").value);
-        const cat   = document.getElementById("category").value;
-        if (!name || isNaN(qty) || isNaN(price) || !cat) { alert("Fill all fields correctly."); return; }
-        items.push({ id: genItemId(), name, qty, price, category: cat });
-        renderItems(); resetItem();
-    }
-
-    function renderItems() {
-        const tbody = document.getElementById("tableBody-I");
-        tbody.innerHTML = "";
-        items.forEach((item, index) => {
-            tbody.innerHTML += `<tr onclick="selectItemRow(${index})" style="cursor:pointer" class="${selectedItemIndex===index?'table-info':''}">
-                <td>${item.id}</td><td>${item.name}</td><td>${item.qty}</td>
-                <td>${item.price.toFixed(2)}</td><td>${item.category}</td></tr>`;
-        });
-    }
-
-    function selectItemRow(index) {
-        selectedItemIndex = index;
-        const item = items[index];
-        document.getElementById("I-id").value      = item.id;
-        document.getElementById("I-name").value    = item.name;
-        document.getElementById("Qty").value       = item.qty;
-        document.getElementById("unitPrice").value = item.price;
-        document.getElementById("category").value  = item.category;
-        renderItems();
-    }
-
-    function updateItemr() {
-        if (selectedItemIndex === -1) { alert("Select an item first."); return; }
-        items[selectedItemIndex] = {
-            id:       items[selectedItemIndex].id,
-            name:     document.getElementById("I-name").value.trim(),
-            qty:      parseInt(document.getElementById("Qty").value),
-            price:    parseFloat(document.getElementById("unitPrice").value),
-            category: document.getElementById("category").value
-        };
-        renderItems(); resetItem();
-    }
-
-    function deleteItem() {
-        if (selectedItemIndex === -1) { alert("Select an item first."); return; }
-        if (!confirm("Delete this item?")) return;
-        items.splice(selectedItemIndex, 1);
-        renderItems(); resetItem();
-    }
-
-    function resetItem() {
-        ["I-id","I-name","Qty","unitPrice"].forEach(id => document.getElementById(id).value = "");
-        document.getElementById("category").value = "";
-        selectedItemIndex = -1;
-        renderItems();
-    }
-
-
-    // ===================== ORDER =====================
-    let cart = [];
-
-    function loadOrderSelectors() {
-        const cSelect = document.getElementById("O-cust-select");
-        const iSelect = document.getElementById("O-item-select");
-
-        cSelect.innerHTML = '<option value="" selected disabled>Choose Customer</option>';
-        customers.forEach(c => cSelect.innerHTML += `<option value="${c.id}">${c.id} - ${c.name}</option>`);
-
-        iSelect.innerHTML = '<option value="" selected disabled>Choose Item</option>';
-        items.forEach(i => iSelect.innerHTML += `<option value="${i.id}" ${i.qty===0?'disabled':''}>${i.id} - ${i.name} (${i.qty} left)</option>`);
-
-        document.getElementById("O-cust-name").innerText = "Select a customer";
-        document.getElementById("O-item-display-name").innerText = "Select an item";
-        document.getElementById("O-unit-price").innerText = "Rs. 0.00";
-        document.getElementById("O-stock").innerText = "0";
-    }
-
-    function loadOrderCustomerDetails() {
-        const id = document.getElementById("O-cust-select").value;
-        const customer = customers.find(c => c.id === id);
-        document.getElementById("O-cust-name").innerText = customer ? customer.name : "Select a customer";
-    }
-
-    function loadOrderItemDetails() {
-        const id = document.getElementById("O-item-select").value;
-        const item = items.find(i => i.id === id);
-        if (item) {
-            document.getElementById("O-item-display-name").innerText = item.name;
-            document.getElementById("O-unit-price").innerText = "Rs. " + item.price.toFixed(2);
-            document.getElementById("O-stock").innerText = item.qty;
-        }
-    }
-
-    function addToCart() {
-        const itemId = document.getElementById("O-item-select").value;
-        const qty    = parseInt(document.getElementById("O-qty").value);
-        const item   = items.find(i => i.id === itemId);
-
-        if (!itemId){
-            alert("Select an item.");
-            return;
-        }
-        if (!item){
-            alert("Item not found.");
-            return;
-        }
-        if (isNaN(qty) || qty <= 0){
-            alert("Enter a valid quantity.");
-            return;
-        }
-
-        const cartedQty = cart.filter(c => c.id === item.id).reduce((s, c) => s + c.qty, 0);
-        if (cartedQty + qty > item.qty) {
-            alert("Not enough stock! Available: " + (item.qty - cartedQty));
-            return;
-        }
-
-        cart.push({id: item.id, name: item.name, qty, price: item.price, total: item.price * qty });
-        renderCart();
-        document.getElementById("O-qty").value = "";
-    }
-
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        renderCart();
-    }
-
-    function renderCart() {
-        const tbody = document.getElementById("cartTableBody");
-        tbody.innerHTML = "";
-        let netTotal = 0;
-        cart.forEach((c, i) => {
-            netTotal += c.total;
-            tbody.innerHTML += `<tr>
-                <td>${c.id}</td><td>${c.name}</td><td>${c.qty}</td>
-                <td>${c.price.toFixed(2)}</td><td>${c.total.toFixed(2)}</td>
-                <td><button class="btn btn-danger btn-sm py-0 px-2" onclick="removeFromCart(${i})">✕</button></td>
-            </tr>`;
-        });
-        document.getElementById("net-total").innerText = netTotal.toFixed(2);
-    }
-
-    function placeOrder() {
-        if (!document.getElementById("O-cust-select").value) { alert("Select a customer."); return; }
-        if (cart.length === 0) { alert("Cart is empty."); return; }
-
-        cart.forEach(cartItem => {
-            const item = items.find(i => i.id === cartItem.id);
-            if (item) item.qty -= cartItem.qty;
-        });
-
-        alert("Order Placed Successfully!");
-        cart = [];
-        renderCart();
-        renderItems();
-        document.getElementById("O-id").value = "ORD-" + Math.floor(Math.random() * 9000 + 1000);
-        loadOrderSelectors();
-    }
-
-    // ============================================ ORDER DETAILS ==========================================
-
-    let orderHistory = [];
-
-    function placeOrder() {
-        const custSelect = document.getElementById("O-cust-select");
-        if (!custSelect.value) { alert("Select a customer."); return; }
-        if (cart.length === 0) { alert("Cart is empty."); return; }
-
-        const newOrder = {
-            orderId: document.getElementById("O-id").value,
-            date: document.getElementById("O-date").innerText,
-            customerId: custSelect.value,
-            itemsCount: cart.length,
-            netTotal: document.getElementById("net-total").innerText,
-            items: [...cart]
-        };
-
-        cart.forEach(cartItem => {
-            const item = items.find(i => i.id === cartItem.id);
-            if (item) item.qty -= cartItem.qty;
-        });
-
-        orderHistory.push(newOrder);
-
-        alert("Order Placed Successfully!");
-
-        cart = [];
-        renderCart();
-        renderItems();
-        document.getElementById("O-id").value = "ORD-" + Math.floor(Math.random() * 9000 + 1000);
-        loadOrderSelectors();
-    }
-
-    function renderOrderHistory() {
-        const tbody = document.getElementById("orderHistoryBody");
-        const msg = document.getElementById("no-orders-msg");
-
-        tbody.innerHTML = "";
-
-        if (orderHistory.length === 0) {
-            msg.classList.remove("d-none");
-            return;
-        } else {
-            msg.classList.add("d-none");
-        }
-
-        orderHistory.forEach(order => {
-            tbody.innerHTML += `
-                <tr class="border-bottom">
-                    <td class="ps-4 fw-bold text-primary">${order.orderId}</td>
-                    <td class="small text-muted">${order.date}</td>
-                    <td><span class="badge bg-light text-dark border">${order.customerId}</span></td>
-                    <td>${order.itemsCount} Items</td>
-                    <td class="fw-bold text-success">Rs. ${order.netTotal}</td>
-                    <td class="text-center">
-                        <span class="badge bg-success-subtle text-success px-3 border border-success">Completed</span>
-                    </td>
-                </tr>
-            `;
-        });
-    }
-
-    function showOrderDetails() {
-        hideAllSections();
-        document.getElementById("order-details").classList.remove("d-none");
-        renderOrderHistory();
-    }
-
-    // ============================================ Dashboard ==========================================//
-
-
-    function showHome() {
-        hideAllSections();
-        document.getElementById("home").classList.remove("d-none");
-
-        document.getElementById("stat-customers").innerText = customers.length;
-        document.getElementById("stat-items").innerText = items.length;
-        document.getElementById("stat-orders").innerText = orderHistory.length;
-
-        let revenue = 0;
-        orderHistory.forEach(order => {
-            let total = parseFloat(order.netTotal.replace(/[^0-9.-]+/g,""));
-            revenue += total;
-        });
-        document.getElementById("stat-revenue").innerText = "Rs. " + revenue.toLocaleString(undefined, {minimumFractionDigits: 2});
-    }
-</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="Controller/Dashboard.js"></script>
+<script type="module" src="Controller/Customer.js"></script>
+<script type="module" src="Controller/Item.js"></script>
+<script type="module" src="Controller/Order.js"></script>
+<script type="module" src="Controller/OrderDetails.js"></script>
 </body>
 </html>
 
