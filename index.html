@@ -549,8 +549,74 @@
         loadOrderSelectors();
     }
 
-    // ===================== ORDER DETAILS =====================
+    // ============================================ ORDER DETAILS ==========================================
 
+    let orderHistory = [];
+
+    function placeOrder() {
+        const custSelect = document.getElementById("O-cust-select");
+        if (!custSelect.value) { alert("Select a customer."); return; }
+        if (cart.length === 0) { alert("Cart is empty."); return; }
+
+        const newOrder = {
+            orderId: document.getElementById("O-id").value,
+            date: document.getElementById("O-date").innerText,
+            customerId: custSelect.value,
+            itemsCount: cart.length,
+            netTotal: document.getElementById("net-total").innerText,
+            items: [...cart]
+        };
+
+        cart.forEach(cartItem => {
+            const item = items.find(i => i.id === cartItem.id);
+            if (item) item.qty -= cartItem.qty;
+        });
+
+        orderHistory.push(newOrder);
+
+        alert("Order Placed Successfully!");
+
+        cart = [];
+        renderCart();
+        renderItems();
+        document.getElementById("O-id").value = "ORD-" + Math.floor(Math.random() * 9000 + 1000);
+        loadOrderSelectors();
+    }
+
+    function renderOrderHistory() {
+        const tbody = document.getElementById("orderHistoryBody");
+        const msg = document.getElementById("no-orders-msg");
+
+        tbody.innerHTML = "";
+
+        if (orderHistory.length === 0) {
+            msg.classList.remove("d-none");
+            return;
+        } else {
+            msg.classList.add("d-none");
+        }
+
+        orderHistory.forEach(order => {
+            tbody.innerHTML += `
+                <tr class="border-bottom">
+                    <td class="ps-4 fw-bold text-primary">${order.orderId}</td>
+                    <td class="small text-muted">${order.date}</td>
+                    <td><span class="badge bg-light text-dark border">${order.customerId}</span></td>
+                    <td>${order.itemsCount} Items</td>
+                    <td class="fw-bold text-success">Rs. ${order.netTotal}</td>
+                    <td class="text-center">
+                        <span class="badge bg-success-subtle text-success px-3 border border-success">Completed</span>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    function showOrderDetails() {
+        hideAllSections();
+        document.getElementById("order-details").classList.remove("d-none");
+        renderOrderHistory();
+    }
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
