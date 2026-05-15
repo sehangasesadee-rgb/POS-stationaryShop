@@ -27,7 +27,7 @@ class Order {
 
 const placeOrderModel = (orderId, date, custId, custName, items, total) => {
 
-    // 🔻 reduce stock
+
     items.forEach(ci => {
         const item = item_db.find(i => i.id === ci.id);
         if (item) {
